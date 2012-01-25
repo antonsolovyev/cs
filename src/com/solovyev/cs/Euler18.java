@@ -27,6 +27,13 @@ public class Euler18
 		return res;
 	}
 
+	/*
+	 * We are building another triangle where each number is the cost of the best path from that point down.
+	 * 
+	 * Each next row up is obtained by choosing the best path down from the two alternatives + the cost of the current triangle row.
+	 * 
+	 * The result is the top value of the derivative triangle.
+	 */
 	public static long solve(List<List<Long>> triangle)
 	{
 		List<Long> list = new ArrayList<Long>();
