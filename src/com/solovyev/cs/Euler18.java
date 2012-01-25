@@ -29,7 +29,6 @@ public class Euler18
 
 	public static long solve(List<List<Long>> triangle)
 	{
-		
 		List<Long> list = new ArrayList<Long>();
 		for(int i = 0; i < triangle.get(triangle.size() - 1).size() + 1; i++)
 			list.add(0L);
