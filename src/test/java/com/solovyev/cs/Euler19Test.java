@@ -82,8 +82,10 @@ public class Euler19Test
     }
 
     @Test
-    public void testGetNumberSundaysOnFirstOfMonth() throws Exception
+    public void testSolve() throws Exception
     {
-        assertEquals(171, Euler19.solve(1901, 2000));
+        int res = Euler19.solve(1901, 2000);
+        System.out.println("Euler 19 answer: " + res);
+        assertEquals(171, res);
     }
 }
