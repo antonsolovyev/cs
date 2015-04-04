@@ -20,18 +20,6 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
 
 public class Euler24
 {
-    // 0. Consider:
-    // 0356872941
-    //
-    // 1. Start at the back of list and find first unordered element (2):
-    // 034687 2 941
-    //
-    // 2. When found, swap that element with the one larger than that (4):
-    // 034687 4 921
-    //
-    // 3. The remaining list is still ordered after swap, revert it:
-    //
-    // 034687 4 129
     public static List<Integer> solve()
     {
         List<Integer> input = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -44,14 +32,41 @@ public class Euler24
         return input;
     }
 
-    // Find next larger permutation
+    /*
+    Find next larger permutation
+
+    0. Consider:
+
+        0356872941
+
+    1. Start at the back of list and find first unordered element (2):
+
+        034687 2941
+
+    2. Now work with a sub list that starts with this element:
+
+        2 941
+
+    3. Swap 0-th element with the first one looking from the back that is larger (4):
+
+        4 9 2 1
+
+    4. The remaining list is still ordered after swap, so revert it to get the smallest:
+
+        4 129
+
+    5. Result is:
+
+        0356874129
+
+     */
     public static List<Integer> permutate(List<Integer> input)
     {
         for (int i = input.size() - 1; i > 0; i--)
         {
             if (input.get(i - 1) < input.get(i))
             {
-                permutateSimple(input.subList(i - 1, input.size()));
+                permutate2(input.subList(i - 1, input.size()));
 
                 break;
             }
@@ -60,8 +75,8 @@ public class Euler24
         return null;
     }
 
-    // Find next permutation for a simple case: the first element is unordered
-    public static void permutateSimple(List<Integer> input)
+    // Steps starting with #2
+    public static void permutate2(List<Integer> input)
     {
 
         for (int i = input.size() - 1; i > 0; i--)

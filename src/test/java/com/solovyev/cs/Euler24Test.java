@@ -30,15 +30,15 @@ public class Euler24Test
     public void testPermutateSimple() throws Exception
     {
         List<Integer> list = Arrays.asList(2, 9, 4, 1);
-        Euler24.permutateSimple(list);
+        Euler24.permutate2(list);
         assertEquals(Arrays.asList(4, 1, 2, 9), list);
 
         List<Integer> list2 = Arrays.asList(2, 9, 4, 3);
-        Euler24.permutateSimple(list2);
+        Euler24.permutate2(list2);
         assertEquals(Arrays.asList(3, 2, 4, 9), list2);
 
         List<Integer> list3 = Arrays.asList(5, 9, 4, 3);
-        Euler24.permutateSimple(list3);
+        Euler24.permutate2(list3);
         assertEquals(Arrays.asList(9, 3, 4, 5), list3);
     }
 
