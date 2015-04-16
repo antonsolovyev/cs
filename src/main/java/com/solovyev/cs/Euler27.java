@@ -58,7 +58,7 @@ public class Euler27
             }
         }
 
-        System.out.println("maxPrimes: " + maxPrimes + ", maxPimesA: " + maxPrimesA + ", maxPrimesB: " + maxPrimesB);
+        System.out.println("maxPrimes: " + maxPrimes + ", maxPrimesA: " + maxPrimesA + ", maxPrimesB: " + maxPrimesB);
 
         return maxPrimesA * maxPrimesB;
     }
