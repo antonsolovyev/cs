@@ -19,7 +19,8 @@ import java.util.List;
  */
 // I only need to worry about 6 digit numbers at the most:
 // The largest 5-th power is n * 9^5. The smallest number with n digits is 10^(n - 1).
-// Obviously, n = 6 is guaranteed to make the power always smaller.
+// Obviously, n = 7 is guaranteed to make the power always smaller (7*10^5 vs 10^6), so 6 is our number
+// of digits.
 public class Euler30
 {
     private static final long MAX_POWER = 6 * 9 * 9 * 9 * 9 * 9;
