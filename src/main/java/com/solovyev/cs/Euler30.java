@@ -36,31 +36,13 @@ public class Euler30
         return res;
     }
 
-    private static List<Integer> longToDecimalDigitList(long n)
-    {
-        List<Integer> res = new ArrayList<Integer>();
-        while (true)
-        {
-            if (n == 0)
-            {
-                break;
-            }
-
-            res.add(0, (int) (n % 10));
-
-            n = n / 10;
-        }
-
-        return res;
-    }
-
     public static List<Long> getDigitsFifthPowers()
     {
         List<Long> res = new ArrayList<>();
 
         for (long i = 2; i <= MAX_POWER; i++)
         {
-            List<Integer> digits = longToDecimalDigitList(i);
+            List<Integer> digits = Numbers.longToDecimalDigitList(i);
             long powers = 0L;
             for (Integer d : digits)
             {

@@ -63,9 +63,9 @@ public class Euler32
     public static boolean isPandigitalIdentity(long multiplicand, long multiplier, long product)
     {
         List<Integer> decimalDigits = new ArrayList<>();
-        decimalDigits.addAll(longToDecimalDigitList(multiplicand));
-        decimalDigits.addAll(longToDecimalDigitList(multiplier));
-        decimalDigits.addAll(longToDecimalDigitList(product));
+        decimalDigits.addAll(Numbers.longToDecimalDigitList(multiplicand));
+        decimalDigits.addAll(Numbers.longToDecimalDigitList(multiplier));
+        decimalDigits.addAll(Numbers.longToDecimalDigitList(product));
 
         Set<Integer> uniqueDecimalDigits = new HashSet<>(decimalDigits);
         if(decimalDigits.size() == 9  && uniqueDecimalDigits.size() == 9 && !uniqueDecimalDigits.contains(0))
@@ -74,20 +74,5 @@ public class Euler32
         }
 
         return false;
-    }
-
-    private static List<Integer> longToDecimalDigitList(long n)
-    {
-        List<Integer> res = new ArrayList<>();
-        while(true)
-        {
-            if(n == 0)
-                break;
-
-            res.add(0, (int)(n % 10));
-
-            n = n / 10;
-        }
-        return res;
     }
 }

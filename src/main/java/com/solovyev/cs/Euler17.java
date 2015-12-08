@@ -11,27 +11,12 @@ public class Euler17
 	private static final String[] teens = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
 	private static final String[] tens = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
-	private static List<Integer> longToDecimalDigitList(long n)
-	{
-		List<Integer> res = new ArrayList<Integer>();		
-		while(true)
-		{
-			if(n == 0)
-				break;
-			
-			res.add(0, (int)(n % 10));
-			
-			n = n / 10;
-		}
-		return res;
-	}
-	
 	public static String sayNumber(long n)
 	{
 		if(n < 1 || n > 1000)
 			throw new RuntimeException("don't know how to say \"" + n + "\"");
 
-		List<Integer> digits = longToDecimalDigitList(n);
+		List<Integer> digits = Numbers.longToDecimalDigitList(n);
 		
 		String res = "";
 		
