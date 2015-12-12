@@ -19,4 +19,17 @@ public class Numbers
         }
         return res;
     }
+
+    public static Long decimalDigitListToLong(List<Integer> digits)
+    {
+        long res = 0;
+        long powerOfTen = 1;
+        for(int i = digits.size() - 1; i >= 0; i--)
+        {
+            res += digits.get(i) * powerOfTen;
+            powerOfTen *= 10;
+        }
+
+        return res;
+    }
 }
